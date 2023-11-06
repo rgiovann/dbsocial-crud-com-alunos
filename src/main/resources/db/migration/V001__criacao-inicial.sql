@@ -17,7 +17,7 @@ ENGINE = InnoDB charset=UTF8MB4;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `curso` 
  (
-  `curso_id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `curso_descricao` VARCHAR(500) NOT NULL,
   `curso_fornecedor` VARCHAR(45) NOT NULL,
   `curso_nome` VARCHAR(45) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `curso`
     REFERENCES `categoria` (`categoria_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,  
-  PRIMARY KEY (`curso_id`)
+  PRIMARY KEY (`id`)
   )
 ENGINE = InnoDB default charset=UTF8MB4;
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `aluno_curso`
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_aluno_curso_curso`
     FOREIGN KEY (`curso_idcurso`)
-    REFERENCES `curso` (`curso_id`)
+    REFERENCES `curso` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
     )
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `curso_disciplina`
   PRIMARY KEY pk_aluno_curso (`curso_idcurso`, `disciplina_iddisciplina`),
   CONSTRAINT `curso_disciplina_curso`
     FOREIGN KEY (`curso_idcurso`)
-    REFERENCES `curso` (`curso_id`)
+    REFERENCES `curso` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `curso_disciplina_disciplina`
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `aula` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_aula_curso`
     FOREIGN KEY (`curso_idcurso` )
-    REFERENCES `curso` (`curso_id`)
+    REFERENCES `curso` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)    
 ENGINE = InnoDB charset=UTF8MB4;

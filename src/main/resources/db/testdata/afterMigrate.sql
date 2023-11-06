@@ -16,6 +16,7 @@ delete from professor;
 delete from aula;
 delete from empresa;
 delete from categoria;
+delete from foto_curso;
 
 -- -----------------------------------------------------
 -- Habilita checks de foreign key
@@ -43,7 +44,7 @@ insert into categoria (categoria_id,categoria_nome)
 values (1,'Curso Técnico Padrão'),(2,'Projeto 1o Emprego'), 
        (3,'Projeto Trilhas do Futuro'),(4,'Projeto Apoio a indústria textil');
 
-insert into curso (curso_id, curso_descricao,curso_fornecedor,curso_nome,curso_url,
+insert into curso (id, curso_descricao,curso_fornecedor,curso_nome,curso_url,
 curso_regime,curso_visualizacao,curso_gostei,curso_qtd_hrs,categoria_idcategoria) 
 values 
       (1, 'Auxiliar de Cozinha em restaurantes de pequeno médio porte',
